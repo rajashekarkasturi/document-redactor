@@ -148,11 +148,13 @@ if st.session_state.redacted_file and st.session_state.original_file:
     with col1:
         st.subheader("Original Document")
         base64_pdf_orig = get_pdf_display_str(st.session_state.original_file)
-        st.markdown(f'<iframe src="data:application/pdf;base64,{base64_pdf_orig}" width="100%" height="800px"></iframe>', unsafe_allow_html=True)
+        pdf_display = f'<embed src="data:application/pdf;base64,{base64_pdf_orig}" width="100%" height="800" type="application/pdf">'
+        st.markdown(pdf_display, unsafe_allow_html=True)
 
     with col2:
         st.subheader("Redacted Document")
         base64_pdf_redacted = get_pdf_display_str(st.session_state.redacted_file)
-        st.markdown(f'<iframe src="data:application/pdf;base64,{base64_pdf_redacted}" width="100%" height="800px"></iframe>', unsafe_allow_html=True)
+        pdf_display = f'<embed src="data:application/pdf;base64,{base64_pdf_redacted}" width="100%" height="800" type="application/pdf">'
+        st.markdown(pdf_display, unsafe_allow_html=True)
 else:
     st.info("Upload a file and click 'Process Files' to see the results.")
