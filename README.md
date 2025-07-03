@@ -3,6 +3,8 @@ A web application built on top of streamlit UI to redact PDFs **in-memory**.
 
 ## Demo
 
+[![REDACT_PDF](https://img.youtube.com/vi/9phB1zFqphQ/0.jpg)](https://www.youtube.com/watch?v=9phB1zFqphQ)
+
 ### Local Demo
 
 This demo on my local instance, demonstrates the working of PDF Redaction with features incorporating..
