@@ -1,9 +1,20 @@
 # 📃 Document Redactor 
 A web application built on top of streamlit UI to redact PDFs **in-memory**.
 
-## Live Demo
+## Demo
 
+### Local Demo
 
+This demo on my local instance, demonstrates the working of PDF Redaction with features incorporating..
+1. Selecting `REDACTION_PATTERNS`, `PAGE_RANGES`, `CUSTOM_TEXT` and `IMAGES` with a single click.
+2. After you hit process, It shows preview of the Original and Redacted in side-by-side view.
+3. You have the option to download the redacted PDF.
+
+### Live Demo
+
+* The Live demo is published on streamlit cloud at: <https://document-redactor-fetkppfjp3tptqjdkobidq.streamlit.app/>
+* **Note:** Streamlit Cloud's Content Security Policy (CSP) is blocking all inline content loaded via data: URIs. so, there is issue in **rendering PDF's** after the processing.
+* But, The functionality is intact and once you select the `REDACTION_CONFIGURATION` and hit process. You should be able to download the the redacted pdf.
 
 ## Local Setup
 
@@ -18,7 +29,7 @@ $> cd document-redactor/
 
 ### 2. Create virtual environment and install dependencies
 
-* This setup ensures to have isolated python environment for the project. While there is more robust way with [uv](https://docs.astral.sh/uv/guides/projects/), this(venv) can get the job done.
+* This setup ensures to have isolated python environment for the project. While there is more robust way with [uv](https://docs.astral.sh/uv/guides/projects/), venv can get the job done.
 
 ```bash
 $> python -m venv .venv
@@ -61,4 +72,4 @@ Key areas to focus
 
 3. **Advanced Intelligence: GenAI & OCR Integration**
 GenAI for Superior PII Detection: Replace or augment regex-based PII detection with fine-tuned Named Entity Recognition (NER) models from platforms like Hugging Face or spaCy. This would drastically improve accuracy, reduce false positives/negatives, and allow for the detection of more nuanced sensitive data (e.g., company-specific project codenames).
-OCR for Scanned Documents: Integrate an OCR engine (Tesseract, Amazon Textract, Google Vision API or OSS Vision Models) to process image-based (scanned) PDFs. The OCR output would be fed into the redaction engine, making the solution universally applicable to all PDF types.
+OCR for Scanned Documents: Integrate an OCR engine (Tesseract, Amazon Textract, Google Vision API or Opensource Vision Models) to process image-based (scanned) PDFs. The OCR output would be fed into the redaction engine, making the solution universally applicable to all PDF types.
